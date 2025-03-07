@@ -1,0 +1,65 @@
+#Contenido {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    justify-content: center;
+    align-content: center;
+    margin-top: 59px;
+}
+
+#Filtros {
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    width: 15%;
+    height: 100%;
+    border-color: black;
+    margin-left: 10px;
+    position: sticky;
+    top: -300px;
+}
+
+details {
+    display: grid;
+    justify-content: center;
+    margin-left: 10%;
+    width: 250px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    max-height: 90px;
+    min-height: 80px;
+}
+
+details[open] {
+    max-height: 200px;
+}
+
+header, summary {
+    display: grid;
+    justify-content: center;
+    margin: 10px 0px 0px 10px;
+    width: 238px;
+    height: 45px;
+}
+
+#Productos {
+    display: flow-root;
+    width: 85%;
+    align-content: center;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 30px;
+}
+
+#carta {
+    border: none;
+}
+
+#carta-imagen {
+    margin: 10px;
+    width: auto;
+}
