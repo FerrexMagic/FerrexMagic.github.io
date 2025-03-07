@@ -1,0 +1,19 @@
+theme: jekyll-theme-cayman
+
+# Configuración personalizada
+title: FerrexMagic
+description: "La Arboleda Aastral"
+baseurl: "" # la URL base de tu sitio web
+url: "https://ferrexmagic.github.io" # la URL de tu sitio web
+
+# Configuración de la página de inicio
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      permalink: /:path/
+
+# Página de inicio personalizada
+index:
+  path: "../Inicio/inicio.html"
