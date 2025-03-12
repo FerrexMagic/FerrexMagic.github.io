@@ -1,0 +1,23 @@
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px; /* Asegurar que el padding no cambie */
+    width: 40px; /* Tamaño fijo */
+    height: 40px; /* Tamaño fijo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-svgIcon {
+    width: 20px;
+    height: 20px;
+    fill: red; /* Color normal */
+    transition: fill 0.3s ease; /* Transición de color */
+}
+
+/* Cambio de color al pasar el cursor SIN modificar tamaño */
+.delete-button:hover .delete-svgIcon {
+    fill: darkred; /* Color más oscuro al hacer hover */
+}

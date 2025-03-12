@@ -1,0 +1,11 @@
+#adminPanel {
+    position: relative;
+    height: calc(82vh + 7px);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" type="text/css" href="styles/carritoUI.css">
+    <link rel="stylesheet" type="text/css" href="styles/boton.css">
+    <link rel="stylesheet" type="text/css" href="styles/botonComprar.css">
+</head>
+
+<body>
+    <div class="container-fluid p-0 text-center" id="carrito">    
+        <!-- Tabla de productos -->
+        <div class="container mt-4">
+            <table class="table table-striped text-center">
+                <thead class="table-dark text-center" id="cabeza">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="listaProductos" class="text-center" id="cuerpo">
+                    <!-- Filas de productos dinámicas -->
+                </tbody>
+                <tfoot>
+                    <tr class="table-dark text-center" id="cabeza">
+                        <td colspan="2"><strong>Total:</strong></td>
+                        <td id=><strong id="totalPrecio">0.00€</strong></td>
+                        <td>
+                            <div class="d-flex justify-content-center" id="botonComprar">
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    
+
+    <script type="module" src="scripts/carritoUI.js"></script>
+    <script type="module" src="scripts/carrito.js"></script>
+</body>
+
+</html>

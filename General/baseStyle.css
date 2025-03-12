@@ -1,0 +1,37 @@
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+#logo {
+    --tamaño: 30px;
+    width: var(--tamaño);
+    height: var(--tamaño);
+}
+
+#clienteMenu {
+    margin: 0px 30px 0px 20px;  
+}
+
+#clienteMenu .dropdown-menu {
+    background-color: rgb(65, 65, 65); 
+    color: white; 
+    border: none; 
+}
+
+#clienteMenu .dropdown-menu .dropdown-item {
+    color: white;
+}
+
+
+#clienteMenu .dropdown-menu .dropdown-item:hover {
+    background-color: rgb(79, 79, 79);
+    color: white;
+}
+
+
+#clienteMenu .dropdown-menu {
+    right: 0;
+    left: auto;
+    min-width: 150px; 
+}
