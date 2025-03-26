@@ -1,88 +1,92 @@
-.portada {
-    position: relative;
-    height: calc(90vh + 15px);
-    background-image: url("../img/fondo.png");
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    color: white;
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
 }
 
-.portada h1 {
-    z-index: 1;
-    position: absolute;
-    top: 115px;
-    width: 17rem;
-    padding: 10px;
-    color: rgb(255, 255, 255);
-    font-size: 3.59rem; 
-    font-family: "Fleur De Leah", cursive;   
+/*
+ * Base structure
+ */
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
 
-.portada p {
-    position: absolute;
-    bottom: 10rem;
-    width: 35rem;
-    border: solid;
-    border-radius: 10px;
-    border-color: green;
-    padding: 10px;
-    font-size: 2rem;
-    font-family: "Fleur De Leah", cursive;
-    background: rgba(5, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+#portada {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
 }
 
-.portada .btn-container {
-    position: absolute;
-    bottom: 20px;
+#portada h1 {
+  z-index: 1;
+  position: absolute;
+  top: 190px;
+  width: 17rem;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 3.59rem; 
+  font-family: "Fleur De Leah", cursive;   
 }
 
-#Descripcion {
-    width: 60%;
-    padding: 18px;
-    border-radius: 10px;
+#portada p {
+  position: absolute;
+  bottom: 10rem;
+  width: 35rem;
+  border: solid;
+  border-radius: 10px;
+  border-color: green;
+  padding: 10px;
+  font-size: 2rem;
+  font-family: "Fleur De Leah", cursive;
+  background: rgba(5, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
 }
 
-#ImagenDesc {
-    width: 40%;
-    img {
-        padding: 18px;
-        border-radius: 10px;
-    }
-}
-
-#items {
-    width: auto;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-}
-
-#Texto {
-    padding: 18px;
-    border-radius: 10px;
-    margin: 20px 5rem;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center;
+#portada .btn-container {
+  position: absolute;
+  bottom: 20px;
 }
 
 .image-container {
-    text-align: center; /* Centra la imagen */
-    margin-top: 20px; /* Espacio entre el h1 y la imagen */
-    position: absolute;
-    z-index: 0;
-    top: 0px
+  text-align: center; /* Centra la imagen */
+  position: absolute;
+  z-index: 0;
+  top: 90px
 }
 
 .round-image {
-    width: 300px;
-    height: 300px; 
-    border-radius: 50%;
-    object-fit: cover;
+  width: 300px;
+  height: 300px; 
+  border-radius: 50%;
+  object-fit: cover;
 }
+
+.cover-container {
+  background-image: url("../img/fondo.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+  

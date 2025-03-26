@@ -1,21 +1,36 @@
 import { loadBase, cambiarTema } from "../../General/baseUI.js";
 
+
+function getPreviousDays(date) {
+  const daysOfWeek = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+  
+  let currentDayIndex = date.getDay(); // Obtiene el índice del día actual (0 = Domingo, 6 = Sábado)
+  let orderedDays = [];
+  
+  for (let i = 0; i < 7; i++) {
+      let index = (currentDayIndex + i) % 7;
+      orderedDays.push(daysOfWeek[index]);
+  }
+  
+  return orderedDays;
+}
+
+
 onLoad();
 function onLoad() {
   cargarBoton();
   cargarRedes();
+  cargarEstilo();
   loadBase(cambiarTemaIncio);
   cambiarTemaIncio(false);
 }
 
 function cambiarTemaIncio(checked) {
-  let descripcion = document.getElementById("Descripcion");
+  let descripcion = document.getElementById("descripcion");
   descripcion.style.backgroundColor = checked ? "rgb(237, 237, 237)" : "rgb(86, 63, 63)";
-  
-  let textos = document.querySelectorAll(".col-md-4");
-  textos.forEach((texto) => {
-    texto.style.backgroundColor = checked ? "rgb(237, 237, 237)" : "rgb(86, 63, 63)";
-  });
+
+  let contacto = document.getElementById("contacto");
+  contacto.style.backgroundColor = checked ? "rgb(237, 237, 237)" : "rgb(86, 63, 63)";
 
   let redes = document.getElementsByName("botonRedes");
   redes.forEach((red) => {
@@ -131,5 +146,26 @@ function cargarRedes() {
       </a>
     </div>
   `;
-  document.getElementsByName("redes")[0].innerHTML += redes;
+  const doc = document.getElementsByName("redes")[0].innerHTML;
+  document.getElementsByName("redes")[0].innerHTML = doc + redes;
+}
+
+function cargarEstilo() {
+  const fadeElements = document.querySelectorAll(".fade-in");
+  
+    const appearOnScroll = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target); // Deja de observar el elemento una vez aparece
+          }
+        });
+      },
+      { threshold: 0.2 } // Se activa cuando el 20% del elemento es visible
+    );
+  
+    fadeElements.forEach((element) => {
+      appearOnScroll.observe(element);
+    });
 }

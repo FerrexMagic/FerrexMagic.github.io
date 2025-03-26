@@ -3,7 +3,7 @@ const loginUI = "../Login/logIn.html";
 const signinUI = "../Login/signIn.html";
 const carritoUI = "../Carrito/carrito.html";
 const inicioUI = "../Inicio/inicio.html";
-const adminUI = "../Temporal/admin.html";
+const adminUI = "../Admin/admin.html";
 const profileUI = "../Temporal/profile.html";
 var fun;
 
@@ -43,7 +43,7 @@ function getHeader() {
 
 function getFooter() {
     return `<footer class="bg-dark text-light text-center py-3">
-        <p>&copy; ${Date().split(" ")[3]} La Arboleda Astral</p>
+        <p>&copy; ${new Date().getFullYear()} La Arboleda Astral</p>
         </footer>`;
 }
 
@@ -65,8 +65,7 @@ export function loadBase(funcionTema) {
     const script = document.createElement("script");
     script.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js";
     document.body.appendChild(script);
-
-
+    
     const switchTema = document.getElementById("switchTema");
     if (switchTema && typeof funcionTema === "function") {
         switchTema.addEventListener("change", function () {
