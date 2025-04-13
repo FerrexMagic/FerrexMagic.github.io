@@ -11,7 +11,6 @@ function onload() {
 
 function loadCarrito() {
     var carrito = getCarrito();
-    console.log(carrito);
     
     if(!carrito) {
         document.getElementById("listaProductos").innerHTML = "";

@@ -1,6 +1,12 @@
 import { loadBase, cambiarTema } from "../../General/baseUI.js";
 import { graficasConfig } from "./dashboard.js";
 
+const cabeceraPedido = ["id", "user", "total", "fecha", "estado"];
+const cabeceraProducto = ["id", "foto", "nombre", "nombre cientifico", "precio", "stock"];
+const cabeceraCliente = ["id", "user", "email", "cantidad pedidos"];
+const cabeceraInforme = ["id", "user", "problema", "fecha", "estado"];
+
+
 document.addEventListener("DOMContentLoaded", () => {
   loadBase(cambiarTemaAdmin);
   loadSvg();
@@ -143,8 +149,29 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
+  function loadPedidos() {
+    const panel = getTabla(cabeceraPedido, "Pedidos");
+    document.getElementById("contenido").innerHTML = panel;
+
+  }
+
+  function loadProductos() {
+    const panel = getTabla(cabeceraProducto, "Productos");
+    document.getElementById("contenido").innerHTML = panel;
+  }
+
+  function loadClientes() {
+    const panel = getTabla(cabeceraCliente, "Clientes");
+    document.getElementById("contenido").innerHTML = panel;
+  }
+
+  function loadInformes() {
+    const panel = getTabla(cabeceraInforme, "Informes");
+    document.getElementById("contenido").innerHTML = panel;
+  }
+
   function loadGraficaSemana() {
-    const panel = getPanel() + getTabla();
+    const panel = getPanel() + getTabla(cabeceraPedido, "Pedidos Semana");
     document.getElementById("contenido").innerHTML = panel;
     graficasConfig[0]();
   }
@@ -176,50 +203,32 @@ document.addEventListener("DOMContentLoaded", () => {
               <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
             </div>
-            <button type="button"
-              class="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1">
-              <svg class="bi">
-                <use xlink:href="#calendar3" />
-              </svg>
-              Esta Semana
-            </button>
           </div>
         </div>
 
         <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>`;
   }
 
-  function getTabla() {
-    return `<h2>Section title</h2>
-        <div class="table-responsive small">
-          <table class="table table-striped table-sm">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Header</th>
-                <th scope="col">Header</th>
-                <th scope="col">Header</th>
-                <th scope="col">Header</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1,001</td>
-                <td>random</td>
-                <td>data</td>
-                <td>placeholder</td>
-                <td>text</td>
-              </tr>
-              <tr>
-                <td>1,002</td>
-                <td>placeholder</td>
-                <td>irrelevant</td>
-                <td>visual</td>
-                <td>layout</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>`;
+  function getTabla(cabecera, titulo) {
+    return `
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2>${titulo}</h2>
+    </div>
+      <div class="table-responsive small">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              ${cabecera?.map(item => `<th scope="col">${item}</th>`).join("")}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              ${cabecera?.map(item => `<td>${item}</td>`).join("")}
+            </tr>
+          </tbody>          
+        </table>
+      </div>
+    `;
   }
 
   function loadSvg() {

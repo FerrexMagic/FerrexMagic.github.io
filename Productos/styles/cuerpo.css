@@ -22,7 +22,7 @@ details {
     display: grid;
     justify-content: center;
     margin-left: 10%;
-    width: 250px;
+    width: 15rem;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     max-height: 90px;
@@ -37,7 +37,7 @@ header, summary {
     display: grid;
     justify-content: center;
     margin: 10px 0px 0px 10px;
-    width: 238px;
+    width: 13rem;
     height: 45px;
 }
 

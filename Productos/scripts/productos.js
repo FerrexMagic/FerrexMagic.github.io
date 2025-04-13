@@ -1,7 +1,7 @@
 import { loadBase, cambiarTema } from "../../General/baseUI.js";
 import { addCarrito } from "../../Carrito/scripts/carrito.js";
 
-const baseImg = 'https://imgs.search.brave.com/9_XgGs7O2GqUwkkisybbxc5j4hyuzkYLqTUPzuQwxOU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZHVwbGljaGVja2Vy/LmNvbS9uZXdhc3Nl/dHMxL3Jpcy9pbWcv/cHJvLXJldmVyc2Ut/aW1hZ2Uuc3Zn';
+const baseImg = 'images/base.webp';
 const columnas = 4, filas = 4, filtros = 2;
 var numCarta = 0;
 

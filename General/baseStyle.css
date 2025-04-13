@@ -2,7 +2,6 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-
 #logo {
     --tamaño: 30px;
     width: var(--tamaño);
